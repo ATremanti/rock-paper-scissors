@@ -3,37 +3,41 @@ let computerSelection = ""
 let yourScore = 0
 let computerScore = 0
 
-function playRound(playerSelection, computerSelection) {
-    function playerPlays() {
-        x = prompt("Choose between Rock, Paper or Scissors!")
-        if (x.toLowerCase() == "rock") {
-            playerSelection = "rock"
-            return "You chose Rock"
-        } else if (x.toLowerCase() == "paper") {
-            playerSelection = "paper"
-            return "You chose Paper"
-        } else if (x.toLowerCase() == "scissor" || x.toLowerCase() == "scissors") {
-            playerSelection = "scissors"
-            return "You chose Scissors"
-        } else {
-            return "Please choose only between 'Rock', 'Paper' or 'Scissors'."
-        }
+function playerPlays() {
+    let x = prompt("Choose between Rock, Paper or Scissors!")
+    if (x.toLowerCase() == "rock") {
+        playerSelection = "rock"
+        return "You chose Rock"
+    } else if (x.toLowerCase() == "paper") {
+        playerSelection = "paper"
+        return "You chose Paper"
+    } else if (x.toLowerCase() == "scissor" || x.toLowerCase() == "scissors") {
+        playerSelection = "scissors"
+        return "You chose Scissors"
+    } else {
+        return "Please choose only between 'Rock', 'Paper' or 'Scissors'."
     }
+}
+
+function computerPlays() {
+    let x = Math.floor(Math.random() * 3) + 1
+    if (x == 1) {
+        computerSelection = "rock"
+        return "The computer chose Rock";
+    } else if (x == 2) {
+        computerSelection = "paper"
+        return "The computer chose Paper"
+    } else {
+        computerSelection = "scissors"
+        return "The computer chose Scissors"
+    }
+}
+
+function playRound() {
+
     console.log(playerPlays())
-    function computerPlays() {
-        let x = Math.floor(Math.random() * 3) + 1
-        if (x == 1) {
-            computerSelection = "rock"
-            return "The computer chose Rock";
-        } else if (x == 2) {
-            computerSelection = "paper"
-            return "The computer chose Paper"
-        } else {
-            computerSelection = "scissors"
-            return "The computer chose Scissors"
-        }
-    }
     console.log(computerPlays())
+
     if (playerSelection == "rock" && computerSelection == "paper") {
         computerScore++
         return "You lose, Paper beats Rock :("
