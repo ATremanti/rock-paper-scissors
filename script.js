@@ -11,7 +11,7 @@ function playerPlays() {
     } else if (x.toLowerCase() == "paper") {
         playerSelection = "paper"
         return "You chose Paper"
-    } else if (x.toLowerCase() == "scissor" || x.toLowerCase() == "scissors") {
+    } else if (x.toLowerCase() == "scissors") {
         playerSelection = "scissors"
         return "You chose Scissors"
     } else {
